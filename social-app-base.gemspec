@@ -7,11 +7,11 @@ require "social-app-base/version"
 Gem::Specification.new do |s|
   s.name        = "social-app-base"
   s.version     = SocialAppBase::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of SocialAppBase."
-  s.description = "TODO: Description of SocialAppBase."
+  s.authors     = ["Dariusz Michalski"]
+  s.email       = ["dariusz.michalski@useo.pl"]
+  s.homepage    = ""
+  s.summary     = "Facebook App Template"
+  s.description = "Facebook App Template"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
