@@ -1,0 +1,15 @@
+#flash
+  - flash.each do |name, msg|
+    - if flash[name].present?
+      .ui-widget
+        - if name == :error
+          .ui-state-error.ui-corner-all.flash
+            %p
+              %span.ui-icon.ui-icon-alert.flash_icon
+              = msg
+        - else
+          .ui-state-highlight.ui-corner-all.flash
+            %p
+              %span.ui-icon.ui-icon-info.flash_icon
+              = msg
+      - flash.discard(name)

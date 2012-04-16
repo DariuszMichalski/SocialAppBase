@@ -1,0 +1,12 @@
+%h1= t "register_new_page"
+
+= semantic_form_for @page do |f|
+  = f.inputs :class => "inputs registration" do
+    = f.input :first_name
+    = f.input :last_name
+    = f.input :email
+    = f.input :company
+    = f.input :phone_number
+    = f.input :terms_of_use, :as => :boolean, :label => ""
+  = f.buttons do
+    = f.commit_button(t "formtastic.buttons.submit")

@@ -1,0 +1,62 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+pl:
+  edit_settings: "Edytuj ustawienia"
+  page_not_found: "Strona nie została znaleziona"
+  register_new_page: "Jeden krok od korzystania z Face Deals"
+  back: "Powrót"
+  fan_gate: "Brama Like"
+  fan_gate_on: "<strong>Włączona.</strong> Aby skorzystać z aplikacji trzeba lubić Stronę."
+  fan_gate_off: "<strong>Wyłączona.</strong> Każdy może korzystać z aplikacji."
+
+  accept_short: "Tak"
+  cancel_short: "Nie"
+  cancel: "Anuluj"
+  change: "Zmień"
+  save: "Zapisz"
+  send: "Wyślij"
+  preview: "Podgląd"
+  remove: "Usuń"
+  edit: "Edytuj"
+  please_wait: "Proszę czekać..."
+  are_you_sure: "Czy jesteś pewien?"
+  unexpected_error: "Wystąpił nieznany błąd"
+
+  display_settings: "Wyświetlanie"
+  info:
+    header: "Info"
+    content: "<strong>Administrator aplikacji:</strong> <a href=\"mailto: office@useo.pl\">office@useo.pl</a>"
+
+  language: "Język"
+  page:
+    like_gate_tip: "Brama Like umożliwia pokazywanie treści aplikacji tylko dla Fanów strony."
+    choosen_language: "Wybrany język: "
+    this_language: "Polski"
+
+  activerecord:
+    models:
+      page: "Strona"
+    attributes:
+      page:
+        first_name: "Imię"
+        last_name: "Nazwisko"
+        email: "E-mail"
+        company: "Firma"
+        phone_number: "Telefon"
+
+  formtastic:
+    hints:
+      page:
+        terms_of_use: "Akceptuję regulaminy <a href='http://developers.facebook.com/policy/'> Facebook Platform Policies</a> oraz <a href='http://www.facebook.com/legal/terms'> Facebook Terms of Use</a>"
+    buttons:
+      submit: "Rozpocznij korzystanie z Face Deals"
+
+  errors:
+    messages:
+      blank: "To pole nie może być puste"
+      terms_of_use: "Musisz zaakceptować warunki korzystania z serwisu Facebook"
+
+  devise:
+    omniauth_callbacks:
+      success: ""

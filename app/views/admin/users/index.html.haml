@@ -1,0 +1,20 @@
+%h1 Users
+%table
+  %thead
+    %th E-mail
+    %th Full Name
+    %th Facebook ID
+    %th Registered At
+    %th Pages
+    %th
+  %tbody
+    - @users.each do |user|
+      %tr{:class => user_css_class(user)}
+        %td= user.email
+        %td= user.full_name
+        %td= user.facebook_uid
+        %td= user.created_at.strftime("%Y-%m-%d %H:%M")
+        %td= user.pages.count
+        %td.options
+          = link_to "Pages", admin_pages_path(:user_id => user), :class => "button"
+          = link_to (user.blocked? ? "Unblock" : "Block"), toggle_block_admin_user_path(user), :class => "button"

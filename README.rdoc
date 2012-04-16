@@ -1,3 +1,8 @@
 = SocialAppBase
 
 This project rocks and uses MIT-LICENSE.
+
+- turn off assets in application.rb (in your project)
+- configure initializers/social-app-base.rb (set app keys)
+
+$ rails g social_app_base:template

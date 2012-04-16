@@ -1,0 +1,62 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  edit_settings: "Edit settings"
+  page_not_found: "Page not found"
+  register_new_page: "One step away from using Face Deals"
+  back: "Back"
+  fan_gate: "Fan Gate"
+  fan_gate_on: "<strong>Turned On.</strong> To use application people have to like Page."
+  fan_gate_off: "<strong>Turned Off.</strong> Everyone can use the App."
+
+  accept_short: "Yes"
+  cancel_short: "No"
+  cancel: "Cancel"
+  change: "Change"
+  save: "Save"
+  send: "Send"
+  preview: "Preview"
+  remove: "Remove"
+  edit: "Edit"
+  please_wait: "Please wait..."
+  are_you_sure: "Are you sure?"
+  unexpected_error: "Unexpected error occurred"
+
+  display_settings: "Display settings"
+  info:
+    header: "Info"
+    content: "<strong>Application administrator:</strong> <a href=\"mailto: office@useo.pl\">office@useo.pl</a>"
+
+  language: "Language"
+  page:
+    like_gate_tip: "Fan Gate allows to show the content only to your Fans."
+    choosen_language: "Choosen language: "
+    this_language: "English"
+
+  activerecord:
+    models:
+      page: "Page"
+    attributes:
+      page:
+        first_name: "First Name"
+        last_name: "Last Name"
+        email: "E-mail"
+        company: "Company"
+        phone_number: "Phone Number"
+
+  formtastic:
+    hints:
+      page:
+        terms_of_use: "I agree to <a href='http://developers.facebook.com/policy/'> Facebook Platform Policies</a> and <a href='http://www.facebook.com/legal/terms'> Facebook Terms of Use</a>"
+    buttons:
+      submit: "Start using Face Deals"
+
+  errors:
+    messages:
+      blank: "This field can not be blank"
+      terms_of_use: "You must agree to the terms & conditions"
+
+  devise:
+    omniauth_callbacks:
+      success: ""

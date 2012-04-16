@@ -1,0 +1,4 @@
+= content_for :back_button do
+  = back_button(admin_users_path,"left")
+
+= render :partial => (@user ? "user_pages" : "pages")

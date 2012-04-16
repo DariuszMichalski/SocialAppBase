@@ -1,0 +1,18 @@
+#splash_wide {
+  display: block;
+  width: 750px;
+  height: 500px;
+  background-image: url("../../images/social-app-base/splash_screens/install_bg.png");
+  background-position: center;
+  background-repeat: no-repeat; }
+
+#install {
+  position: absolute;
+  left: 615px;
+  top: 460px;
+  display: block;
+  width: 142px;
+  height: 48px;
+  overflow: hidden;
+  text-indent: 9000px;
+  background-image: url("../../images/social-app-base/splash_screens/install_button.png"); }

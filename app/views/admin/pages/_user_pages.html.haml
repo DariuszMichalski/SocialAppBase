@@ -1,0 +1,35 @@
+%h1 User's Pages
+%h2 Pages owner
+%p
+  %span.block{:class => user_css_class(@user)}= @user.full_name
+%p= @user.email
+%p= @user.facebook_uid
+
+%h2 User pages
+
+%table
+  %thead
+    %th Page FB ID
+    %th Full Name
+    %th E-mail
+    %th Company
+    %th Phone Number
+    %th Fan Gate
+    %th Type
+    %th
+  %tbody
+    - @pages.each do |page|
+      %tr{:class => page_css_class(page)}
+        %td= page.page_id
+        %td= page.full_name
+        %td= page.email
+        %td= page.company
+        %td= page.phone_number
+        %td= page.fan_gate
+        %td= page.page_type
+        %td.options
+          = link_to "Params", edit_admin_page_path(:user_id => @user.id, :id => page), :class => "button"
+          = link_to "Preview", admin_page_path(:user_id => @user.id, :id => page), :class => "button"
+          = link_to (page.page_blocked? ? "Unblock" : "Block"), toggle_block_admin_page_path(:user_id => @user.id, :id => page), :class => "button"
+
+

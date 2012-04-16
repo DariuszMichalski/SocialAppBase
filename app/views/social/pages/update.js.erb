@@ -1,0 +1,4 @@
+<% if params[:social_page][:fan_gate].present? %>
+  $('#fan_gate_desc').html('<%= @page.fan_gate ? t("fan_gate_on").html_safe : t("fan_gate_off").html_safe %>');
+<% end %>
+

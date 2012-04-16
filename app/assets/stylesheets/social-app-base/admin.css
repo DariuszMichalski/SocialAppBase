@@ -1,0 +1,100 @@
+body {
+  font-size: 12px;
+  margin: 0;
+  padding: 10px;
+  font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+  background-color: #f2f2f2; }
+
+table {
+  border-collapse: collapse; }
+
+table thead th, table tbody tr td {
+  text-align: left;
+  padding: 3px;
+  padding-left: 5px;
+  padding-right: 5px; }
+
+input {
+  border: 1px solid #EEE; }
+
+.formtastic fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0; }
+
+.formtastic ol {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+li label {
+  display: block;
+  width: 150px;
+  float: left; }
+
+li {
+  line-height: 160%; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+.clearfix {
+  clear: both; }
+
+.user_blocked, .page_blocked {
+  background-color: #ffbbca; }
+
+table td.user_blocked, table td.page_blocked {
+  color: #aa0000;
+  font-weight: bold; }
+
+table td.options {
+  background-color: #F2F2F2; }
+
+.column {
+  width: 400px; }
+
+.column input[type="text"], .column input[type="tel"], .column input[type="email"] {
+  width: 245px; }
+
+.column li p {
+  padding-left: 150px; }
+
+/* flash tooltips */
+.flash {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 0 .7em; }
+
+.flash_icon {
+  float: left;
+  margin-right: .3em; }
+
+a {
+  color: #617aac;
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: underline; }
+
+#login_info {
+  float: right;
+  padding: 5px; }
+
+#menu {
+  font-size: 12px;
+  background-color: #fafafa;
+  padding: 5px;
+  border: 1px solid #CCC; }
+  #menu span, #menu a {
+    margin-right: 5px;
+    color: #617aac; }
+  #menu span {
+    font-weight: bold;
+    color: #555; }
+
+#back {
+  margin-right: 10px; }

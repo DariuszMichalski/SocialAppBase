@@ -1,0 +1,41 @@
+= content_for :back_button do
+  = back_button(admin_pages_path(:user_id => (@user ? @user.id : nil)),"left")
+
+.clearfix
+
+.column.left
+
+  %h1 Edit page
+
+  = semantic_form_for @page, :url => admin_page_path(@page), :html => {:method => :put} do |f|
+    = f.inputs :style => "margin-bottom: 10px;" do
+      %li
+        %label Reg. user name
+        = @page.user ? @page.user_full_name : " - "
+      %li
+        %label Reg. user email
+        = @page.user ? @page.user_email : " - "
+      %li
+        %label Reg. user FB uid
+        = @page.user ? @page.user_facebook_uid : " - "
+    = f.inputs do
+      = f.input :page_id, :input_html => { :disabled => true }
+      = f.input :first_name
+      = f.input :last_name
+      = f.input :email
+      = f.input :company
+      = f.input :phone_number
+      = f.input :terms_of_use, :as => :boolean, :input_html => { :disabled => true }
+    = f.buttons do
+      = f.commit_button("Save")
+
+.column{:style=>"margin-left: 450px;"}
+  %h1 Page settings
+  = semantic_form_for :page_settings, :url => update_settings_admin_page_path(@page), :html => {:method => :put} do |f|
+    = f.inputs do
+      = f.input :time_limit, :as => :select, :collection => ["true","false"]
+      = f.input :end_date, :as => :string
+    = f.buttons do
+      = f.commit_button("Save")
+
+

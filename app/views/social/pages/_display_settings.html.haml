@@ -1,0 +1,14 @@
+.container
+  .height_10
+  .box
+    %h2= t("fan_gate")
+    .header_tip.tip= t("page.like_gate_tip")
+    = form_for @page, :url => social_page_path(:id => @page.fb_id), :remote => true, :html => {:method => :put, :id => "fan_gate_edit", :class => "left"} do |f|
+      = f.check_box :fan_gate, :class => "submittable", :id => "fan_gate"
+      %label{:for => "fan_gate", :class=>"highlight_text"}= t("fan_gate")
+      = submit_tag('',:style=>"display:none;", :id=>"submit_fan_gate")
+    #fan_gate_desc
+      = @page.fan_gate ? t("fan_gate_on").html_safe : t("fan_gate_off").html_safe
+
+:javascript
+    $('#fan_gate_edit .submittable').live('change', function() { send_form_with_ajax('#fan_gate_edit'); });

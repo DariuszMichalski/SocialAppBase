@@ -5,13 +5,28 @@ source "http://rubygems.org"
 # development dependencies will be added by default to the :development group.
 gemspec
 
-# jquery-rails is used by the dummy application
-gem "jquery-rails"
+# Bundle edge Rails instead:
+# gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-# Declare any dependencies that are still in development here instead of in
-# your gemspec. These might include edge Rails or gems from your path or
-# Git. Remember to move these dependencies to your gemspec before releasing
-# your gem to rubygems.org.
+gem 'rails', '3.2.2'
 
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+gem 'devise'
+gem "haml"
+gem 'haml-rails'
+gem 'formtastic'
+gem 'paperclip', "~> 2.4"
+gem "omniauth-facebook"
+gem "fb_graph"
+gem 'ledermann-rails-settings', :require => 'rails-settings'
+
+gem 'execjs'
+gem "therubyracer" # node.js error fix
+
+group :assets do
+  gem 'sass-rails',   '~> 3.2.5'
+  gem 'coffee-rails', '~> 3.2.2'
+  gem 'uglifier', '>= 1.0.3'
+end
+
+gem 'jquery-rails'
+

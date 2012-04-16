@@ -1,0 +1,16 @@
+#tabs
+  %ul
+    %li= link_to t("display_settings"), "#tabs-1", :onclick => "$('#page').show(); $('#flash').fadeOut(); return false;"
+    %li= link_to t("info.header"), "#tabs-2", :onclick => "$('#page').hide(); $('#flash').fadeOut(); return false;"
+  #tabs-1
+    = render :partial => "social/pages/display_settings"
+  #tabs-2
+    = render :partial => "social/pages/info"
+
+  :javascript
+    // ukrywanie podgladu jezeli wlaczone sa inne taby niz "wyswietlanie"
+    $(document).ready(function(){
+      tab_selected = $( "#tabs" ).tabs( "option", "selected" );
+      if (tab_selected > 0) { $('#page').hide(); }
+    });
+
