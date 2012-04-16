@@ -6,7 +6,7 @@ require "social-app-base/version"
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "social-app-base"
-  s.version     = SocialAppBase::VERSION
+  s.version     = '0.0.2'#SocialAppBase::VERSION
   s.authors     = ["Dariusz Michalski"]
   s.email       = ["dariusz.michalski@useo.pl"]
   s.homepage    = ""

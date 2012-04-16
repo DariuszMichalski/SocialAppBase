@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    social-app-base (0.0.1)
+    social-app-base (0.0.2)
       devise (~> 2.0.4)
       execjs
       fb_graph (~> 2.4.7)
