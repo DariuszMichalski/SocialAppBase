@@ -7,8 +7,7 @@ module SocialAppBase
       source_root File.expand_path('../../../../..', __FILE__)
 
       def generate_initialization
-        copy_file 'config/initializers/social-app-base.rb',
-          'config/initializers/social-app-base.rb'
+        copy_file 'config/initializers/social-app-base.rb', 'config/initializers/social-app-base.rb'
       end      
 
       def generate_migration
@@ -26,19 +25,14 @@ module SocialAppBase
       end
 
       def generate_public_assets
-        directory 'app/assets/stylesheets/social-app-base',
-          'public/stylesheets/social-app-base'
-        directory 'app/assets/javascripts/social-app-base',
-          'public/javascripts/social-app-base'
-        directory 'app/assets/images/social-app-base',
-          'public/images/social-app-base'
+        directory 'app/assets/stylesheets/social-app-base', 'app/assets/stylesheets/social-app-base'
+        directory 'app/assets/javascripts/social-app-base', 'app/assets/javascripts/social-app-base'
+        directory 'app/assets/images/social-app-base'     , 'app/assets/images/social-app-base'
       end      
 
       def generate_locales
-        copy_file 'config/locales/en.yml',
-          'config/locales/en.yml'
-        copy_file 'config/locales/pl.yml',
-          'config/locales/pl.yml'  
+        copy_file 'config/locales/en.yml', 'config/locales/en.yml'
+        copy_file 'config/locales/pl.yml', 'config/locales/pl.yml'  
       end      
 
       def self.next_migration_number(dirname)

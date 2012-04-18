@@ -4,11 +4,10 @@ This project rocks and uses MIT-LICENSE.
 
 Installation
 
-1. Turn off assets in application.rb (in your project)
+# 1. Turn off assets in application.rb (in your project)
 2. Configure initializers/social-app-base.rb (set app keys)
 3. set root path 
    root :to => "social/main#index"
-4. Remove application layout
 
 $ rails g social_app_base:template
 
@@ -18,5 +17,6 @@ $ rails g social_app_base:layouts (recommended)
 $ rails g social_app_base:views
 $ rails g social_app_base:tabs
 
-5. Comment protect_from_forgery in application_controller.rb
+4. Remove index.html from public directory
+4. Comment protect_from_forgery in application_controller.rb
 

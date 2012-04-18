@@ -2,7 +2,7 @@
   display: block;
   width: 750px;
   height: 500px;
-  background-image: url("../../images/social-app-base/splash_screens/install_bg.png");
+  background-image: url("splash_screens/install_bg.png");
   background-position: center;
   background-repeat: no-repeat; }
 
@@ -15,4 +15,4 @@
   height: 48px;
   overflow: hidden;
   text-indent: 9000px;
-  background-image: url("../../images/social-app-base/splash_screens/install_button.png"); }
+  background-image: url("splash_screens/install_button.png"); }

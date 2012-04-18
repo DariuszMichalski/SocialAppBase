@@ -8,16 +8,11 @@ module SocialAppBase
         source_root File.expand_path('../../../../..', __FILE__)
 
         def generate_tabs
-          copy_file 'app/views/social/pages/show.html.haml',
-            'app/views/social/pages/show.html.haml'
-          copy_file 'app/views/social/pages/_controls.html.haml',
-            'app/views/social/pages/_controls.html.haml'
-          copy_file 'app/views/social/pages/_display_settings.html.haml',
-            'app/views/social/pages/_display_settings.html.haml'          
-          copy_file 'app/views/social/pages/_info.html.haml',
-            'app/views/social/pages/_info.html.haml'
-          copy_file 'app/views/social/pages/update.js.erb',
-            'app/views/social/pages/update.js.erb'
+          copy_file 'app/views/social/pages/show.html.haml'             , 'app/views/social/pages/show.html.haml'
+          copy_file 'app/views/social/pages/_controls.html.haml'        , 'app/views/social/pages/_controls.html.haml'
+          copy_file 'app/views/social/pages/_display_settings.html.haml', 'app/views/social/pages/_display_settings.html.haml'          
+          copy_file 'app/views/social/pages/_info.html.haml'            , 'app/views/social/pages/_info.html.haml'
+          copy_file 'app/views/social/pages/update.js.erb'              , 'app/views/social/pages/update.js.erb'
         end
 
       end

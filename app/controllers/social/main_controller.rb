@@ -8,7 +8,7 @@ class Social::MainController < Social::BaseController
   def index
     if fb_session?          # If application is running on facebook
       if !fb_session.page?  # and not on fan page
-        render "install", :layout => "install"    # display install page
+        render "install", :layout => "social/install"    # display install page
       else                                                # If application is running on facebook fan page
         if fb_session.page_registered?                    # and is already registered
           redirect_to social_page_path(:id=>fb_session.page_id)  # show content for the page
@@ -17,7 +17,7 @@ class Social::MainController < Social::BaseController
         end
       end
     else                    # If application if running outside facebook
-      render "install", :layout => "install"      # display install page
+      render "install", :layout => "social/install"      # display install page
     end
   end
 
