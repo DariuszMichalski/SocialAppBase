@@ -20,9 +20,3 @@ $ rails g social_app_base:tabs
 
 5. Comment protect_from_forgery in application_controller.rb
 
-
-todo:
-
-move users under admin (?) - przemyslec czy to konieczne (chyba nie)
-
-zastanowic sie nad uzytkownikami.. bo moze sie zdarzyc ze ktos doda aplikacje do storny a ktos inny ja zarejestruje i nie bedzie polaczenia pomiedzy uzytkownikiem i strona 
