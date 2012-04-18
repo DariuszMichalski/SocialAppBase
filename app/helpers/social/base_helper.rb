@@ -1,5 +1,13 @@
 module Social
   module BaseHelper
+    def back_button(url, klass='')
+      link_to("<button id='back'>#{t('back')}</button>".html_safe, url, :class => klass) +
+      javascript_tag('$(function() { $("#back").button({icons: { primary: "ui-icon-triangle-1-w" }, text: false }) });')
+    end
+    def back_label_button(url, label, klass='')
+      link_to("<button id='back'>#{label}</button>".html_safe, url, :class => klass) +
+      javascript_tag('$(function() { $("#back").button({icons: { primary: "ui-icon-triangle-1-w" }, text: true }) });')
+    end
 
     # ------------------ Nested attributes / Nested models ------------------ #
     def link_to_remove_fields(name, f, klas=nil)
@@ -40,5 +48,6 @@ module Social
       # otwiera konkretny tab ustawien administratora na podstawie parametru 'tab' z requestu GET
       "selected_tab=#{params[:tab]}" if params[:tab].present?
     end
+
   end
 end

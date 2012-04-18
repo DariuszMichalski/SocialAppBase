@@ -27,7 +27,7 @@ class Social::PagesController < Social::BaseController
 
   def create
     begin
-      @user = User.find_by_facebook_uid(fb_session.user_id) if fb_session and fb_session.user_id.present?
+      @user = Social::User.find_by_facebook_uid(fb_session.user_id) if fb_session and fb_session.user_id.present?
       @page = @user ? @user.pages.new(params[:social_page]) : (user_signed_in? ? current_user.pages.new(params[:social_page]) : Social::Page.new(params[:social_page]))
       @page.page_id = fb_session.page_id
     rescue Exception => e

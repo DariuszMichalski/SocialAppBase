@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-  devise_scope :user do
-    get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
-  end
 
   namespace :admin, :path => 'admin' do
     get '/', :to => 'base#jump'
@@ -13,6 +9,18 @@ Rails.application.routes.draw do
       put :update_settings, :on => :member
       get :toggle_block, :on => :member
     end
+  end
+
+  namespace :social, :path => "social" do
+    devise_for :users, :controllers => { :omniauth_callbacks => "social/users/omniauth_callbacks", :sessions => "social/users/sessions"}
+    devise_scope :user do
+      get '/users/auth/:provider' => 'social/users/omniauth_callbacks#passthru'
+    end    
+    root :to => 'main#index'
+    match "/not_compatibile" => "main#not_compatibile"
+    match "/clear" => "main#clear_session", :as => :clear
+    match "/blank" => "main#blank", :as => :blank
+    resources :pages, :except => [:edit]
   end
 
   # The priority is based upon order of creation:
@@ -65,13 +73,6 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
 
-  namespace :social, :path => "social" do
-    root :to => 'main#index'
-    match "/not_compatibile" => "main#not_compatibile"
-    match "/clear" => "main#clear_session", :as => :clear
-    match "/blank" => "main#blank", :as => :blank
-    resources :pages, :except => [:edit]
-  end
   #match "papers/progress/upload" => "papers#progress_upload", :as => :progress_upload
   # See how all your routes lay out with "rake routes"
 

@@ -41,28 +41,6 @@ module SocialAppBase
           'config/locales/pl.yml'  
       end      
 
-      def generate_views
-        copy_file 'app/views/social/pages/blocked.html.haml',
-          'app/views/social/pages/blocked.html.haml'
-        copy_file 'app/views/social/pages/new.html.haml',
-          'app/views/social/pages/new.html.haml'
-        copy_file 'app/views/social/pages/time_expired.html.haml',
-          'app/views/social/pages/time_expired.html.haml'  
-      end
-
-      def generate_tabs
-        copy_file 'app/views/social/pages/show.html.haml',
-          'app/views/social/pages/show.html.haml'
-        copy_file 'app/views/social/pages/_controls.html.haml',
-          'app/views/social/pages/_controls.html.haml'
-        copy_file 'app/views/social/pages/_display_settings.html.haml',
-          'app/views/social/pages/_display_settings.html.haml'          
-        copy_file 'app/views/social/pages/_info.html.haml',
-          'app/views/social/pages/_info.html.haml'
-        copy_file 'app/views/social/pages/update.js.erb',
-          'app/views/social/pages/update.js.erb'
-      end
-
       def self.next_migration_number(dirname)
         ActiveRecord::Generators::Base.next_migration_number(dirname)
       end

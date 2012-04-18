@@ -1,10 +1,10 @@
-class User < ActiveRecord::Base
+class Social::User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :trackable, :omniauthable , :registerable #, :validatable
          #:registerable, :recoverable, :rememberable, :confirmable, :lockable
 
-  has_many :pages
+  has_many :pages, :class_name => "Social::Page"
   has_settings # rails-settings gem
 
   # Setup accessible (or protected) attributes for your model
@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
 
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
     data = access_token.extra.raw_info
-    if user = User.find_by_email(data.email)
+    if user = Social::User.find_by_email(data.email)
       user
     else # Create a user with a stub password.
       user_params = {
@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
         :last_name    => data.last_name,
         :encrypted_password => Devise.friendly_token[0,20]
       }
-      User.create!(user_params)
+      Social::User.create!(user_params)
     end
   end
 

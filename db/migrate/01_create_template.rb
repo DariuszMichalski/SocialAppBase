@@ -36,6 +36,11 @@ class CreateTemplate < ActiveRecord::Migration
     add_index :users, :facebook_uid
     add_index :users, :role
     
+    # create admin user
+    user = Social::User.new(:email => "admin@example.com", :password => "abc123", :password_confirmation => "abc123")
+    user.role = 'admin'
+    user.save
+
     # -------------------- PAGES ------------------- #
     create_table :pages do |t|
       t.string  :page_id

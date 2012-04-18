@@ -17,7 +17,7 @@ class Admin::BaseController < ApplicationController
   private
 
   def load_user
-    @user = User.find_by_id(params[:user_id])
+    @user = Social::User.find_by_id(params[:user_id])
   rescue
     render :text => "User not found"
   end

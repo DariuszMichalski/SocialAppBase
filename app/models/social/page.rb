@@ -1,5 +1,5 @@
 class Social::Page < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :user, :class_name => "Social::User"
 
   has_attached_file :header_image,  :styles => { :small => "318x61#", :big => "525x100#" },
                                     :path =>  ":rails_root/public/system/pages/:attachment/:id/:style/:basename.:extension",

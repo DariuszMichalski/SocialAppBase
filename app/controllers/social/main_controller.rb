@@ -35,9 +35,9 @@ class Social::MainController < Social::BaseController
     # and if he is signed in to the app, his uid will be assigned to
     # registered page (if there is no uid signed before)
     if fb_session? and fb_session.page? and fb_session.admin? and fb_session.user?
-      user = User.find_by_facebook_uid(fb_session.user_id)
+      user = Social::User.find_by_facebook_uid(fb_session.user_id)
       if user
-        page = Page.find_by_page_id(fb_session.page_id)
+        page = Social::Page.find_by_page_id(fb_session.page_id)
         page.update_attribute(:user_id, user.id) if page and !page.user_id.present?
       end
     end
