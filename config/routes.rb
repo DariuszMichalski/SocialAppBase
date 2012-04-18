@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  devise_for :users, :class_name => "Social::User", :controllers => { :omniauth_callbacks => "social/users/omniauth_callbacks", :sessions => "social/users/sessions"}
+  devise_scope :user do
+    get '/users/auth/:provider' => 'social/users/omniauth_callbacks#passthru'
+  end    
+
   namespace :admin, :path => 'admin' do
     get '/', :to => 'base#jump'
     resources :users do
@@ -12,10 +17,6 @@ Rails.application.routes.draw do
   end
 
   namespace :social, :path => "social" do
-    devise_for :users, :controllers => { :omniauth_callbacks => "social/users/omniauth_callbacks", :sessions => "social/users/sessions"}
-    devise_scope :user do
-      get '/users/auth/:provider' => 'social/users/omniauth_callbacks#passthru'
-    end    
     root :to => 'main#index'
     match "/not_compatibile" => "main#not_compatibile"
     match "/clear" => "main#clear_session", :as => :clear

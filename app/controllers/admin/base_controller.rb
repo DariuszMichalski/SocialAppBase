@@ -2,7 +2,7 @@ class Admin::BaseController < ApplicationController
   protect_from_forgery
 
   before_filter :authenticate_user!
-  layout 'admin'
+  layout 'admin/admin'
 
   helper_method :backend?
 

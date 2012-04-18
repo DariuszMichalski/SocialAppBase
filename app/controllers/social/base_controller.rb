@@ -8,6 +8,8 @@ class Social::BaseController < ApplicationController
   helper_method :fb_session?, :fb_session, :page_admin? # from FacebookSession module
   helper_method :t, :log, :backend?
 
+  layout "social/application"
+
   def backend? # checks if user is in backend or not
     false
   end

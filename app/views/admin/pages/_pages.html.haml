@@ -9,7 +9,6 @@
     %th Company
     %th Phone Number
     %th Fan Gate
-    %th Type
     %th
   %tbody
     - @pages.each do |page|
@@ -20,7 +19,6 @@
         %td= page.company
         %td= page.phone_number
         %td= page.fan_gate
-        %td= page.page_type
         %td.options
           = link_to "Params", edit_admin_page_path(page), :class => "button"
           = link_to "Preview", admin_page_path(page), :class => "button"

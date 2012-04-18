@@ -10,7 +10,7 @@
     = javascript_include_tag "social-app-base/tiny_mce/jquery.tinymce.js"
     = csrf_meta_tags
     
-    = render :partial => "/layouts/clear_fb_session" if !backend? # do not clear session if admin previews page
+    = render :partial => "/layouts/social/clear_fb_session" if !backend? # do not clear session if admin previews page
     :javascript
       // facebook iframe auto-resize
       window.fbAsyncInit = function() { FB.Canvas.setSize(); } // Do things that will sometimes call sizeChangeCallback()
@@ -31,7 +31,7 @@
                 xfbml : true // parse XFBML
               });
       FB.Canvas.setAutoResize(7);
-    = render :partial => "layouts/flash", :locals => {:flash => flash}
+    = render :partial => "layouts/social/flash", :locals => {:flash => flash}
     = yield :controls
     = yield
 

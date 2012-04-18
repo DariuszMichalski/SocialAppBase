@@ -3,7 +3,7 @@ class Admin::PagesController < Admin::BaseController
   before_filter :load_page, :only => [:edit, :update, :update_settings, :toggle_block, :show]
 
   def index
-    @pages = @user ? @user.pages : Page.all
+    @pages = @user ? @user.pages : Social::Page.all
   end
 
   def show
@@ -11,7 +11,7 @@ class Admin::PagesController < Admin::BaseController
   end
 
   def edit
-    @page_settings = PageSettings.new(@page.settings.all)
+    @page_settings = Admin::PageSettings.new(@page.settings.all)
   end
 
   def update
@@ -25,7 +25,7 @@ class Admin::PagesController < Admin::BaseController
   end
 
   def update_settings
-    settings = PageSettings.new(params[:page_settings]) if params[:page_settings]
+    settings = Admin::PageSettings.new(params[:page_settings]) if params[:page_settings]
     if settings
       @page.settings.time_limit = settings.time_limit
       @page.settings.end_date = settings.end_date
@@ -45,6 +45,6 @@ class Admin::PagesController < Admin::BaseController
   private
 
   def load_page
-    @page = @user ? @user.pages.find_by_id(params[:page_id] || params[:id]) : Page.find_by_id(params[:page_id] || params[:id])
+    @page = @user ? @user.pages.find_by_id(params[:page_id] || params[:id]) : Social::Page.find_by_id(params[:page_id] || params[:id])
   end
 end

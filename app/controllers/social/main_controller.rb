@@ -2,7 +2,8 @@
 class Social::MainController < Social::BaseController
   #before_filter :authenticate_user!
   before_filter :assign_uid_to_registered_page, :only => :index
-  layout "info", :only => [:not_compatibile, :blank]
+  
+  layout "social/info", :only => [:not_compatibile, :blank]
 
   def index
     if fb_session?          # If application is running on facebook
