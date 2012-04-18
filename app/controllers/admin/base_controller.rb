@@ -7,7 +7,7 @@ class Admin::BaseController < ApplicationController
   helper_method :backend?
 
   def jump # admin root_path
-    redirect_to admin_users_path
+    redirect_to admin_pages_path
   end
 
   def backend? # checks if user is in backend or not

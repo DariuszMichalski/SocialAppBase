@@ -7,7 +7,7 @@ class Admin::PagesController < Admin::BaseController
   end
 
   def show
-    render :layout => "application"
+    render :layout => "social/application"
   end
 
   def edit

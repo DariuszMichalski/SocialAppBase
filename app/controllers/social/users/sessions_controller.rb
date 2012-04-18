@@ -1,6 +1,6 @@
 class Social::Users::SessionsController < Devise::SessionsController 
   
-  layout "/layouts/admin"
+  layout "layouts/admin/admin"
 
   helper_method :backend?
 
