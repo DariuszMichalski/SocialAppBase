@@ -1,0 +1,15 @@
+defaults: &defaults
+  app_id: 'YOUR_APP_ID'
+  app_secret: 'YOUR_APP_SECRET'
+  office_mail_address: "office@email.ad"
+  mailer_sender: "mailer@sender.com"
+  # facebook_permissions: 'email, offline_access, manage_pages'
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

@@ -30,10 +30,12 @@ class Social::User < ActiveRecord::Base
         :facebook_uid => access_token.uid,
         :facebook_access_token => access_token.credentials.token.to_s,
         :first_name   => data.first_name,
-        :last_name    => data.last_name,
-        :encrypted_password => Devise.friendly_token[0,20]
+        :last_name    => data.last_name
       }
-      Social::User.create!(user_params)
+      user = Social::User.new(user_params)
+      user.encrypted_password = Devise.friendly_token[0,20]
+      user.save!
+      user
     end
   end
 
