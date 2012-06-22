@@ -17,7 +17,7 @@ module FacebookSession
   def fb_session?
     session[:fb] ? true : false
   end
-  def page_admin?
+  def admin?
     (fb_session && fb_session.admin?) ? true : false
   end
 end

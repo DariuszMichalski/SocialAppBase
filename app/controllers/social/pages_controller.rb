@@ -11,11 +11,11 @@ class Social::PagesController < Social::BaseController
     # zabezpieczenie jezeli dostep do strony zostal
     # wylaczony lub wygasl okres dostepu ------------- #
     if @page.blocked?
-      render (page_admin? ? "blocked" : "main/blank")
+      render (admin? ? "blocked" : "main/blank")
       return
     end
     if @page.access_time_expired?
-      render (page_admin? ? "time_expired" : "main/blank")
+      render (admin? ? "time_expired" : "main/blank")
       return
     end
     # ------------------------------------------------ #

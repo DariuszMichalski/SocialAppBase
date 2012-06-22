@@ -5,7 +5,7 @@ class Social::BaseController < ApplicationController
   # before_filter :print_requests
 
   include FacebookSession
-  helper_method :fb_session?, :fb_session, :page_admin? # from FacebookSession module
+  helper_method :fb_session?, :fb_session, :admin? # from FacebookSession module
   helper_method :t, :log, :backend?
 
   layout "social/application"

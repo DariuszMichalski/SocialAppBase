@@ -7,7 +7,7 @@ module SocialAppBase
       source_root File.expand_path('../../../../..', __FILE__)
 
       def generate_initialization
-        copy_file 'config/initializers/social-app-base.rb', 'config/initializers/social-app-base.rb'
+        copy_file 'config/social-app-base.yml', 'config/social-app-base.yml'
       end      
 
       def generate_migration
