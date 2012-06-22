@@ -8,9 +8,6 @@ module SocialAppBase
         source_root File.expand_path('../../../../..', __FILE__)
 
         def generate_layouts
-          copy_file 'app/views/layouts/admin/_login_info.html.haml' , 'app/views/layouts/admin/_login_info.html.haml'
-          copy_file 'app/views/layouts/admin/_menu.html.haml'       , 'app/views/layouts/admin/_menu.html.haml'
-          copy_file 'app/views/layouts/admin/admin.html.haml'       , 'app/views/layouts/admin/admin.html.haml'
           copy_file 'app/views/layouts/social/_flash.html.haml'     , 'app/views/layouts/social/_flash.html.haml'
           copy_file 'app/views/layouts/social/application.html.haml', 'app/views/layouts/social/application.html.haml'
           copy_file 'app/views/layouts/social/info.html.haml'       , 'app/views/layouts/social/info.html.haml'

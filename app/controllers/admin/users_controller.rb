@@ -10,8 +10,12 @@ class Admin::UsersController < Admin::BaseController
 
   def toggle_block
     @user = Social::User.find_by_id(params[:user_id] || params[:id])
-    @user.blocked? ? @user.unblock! : @user.block!
-    flash[:info] = "Settings has been saved"
+    if @user.admin?
+      flash[:info] = "Admin can not be blocked"
+    else
+      @user.blocked? ? @user.unblock! : @user.block!
+      flash[:info] = "Settings has been saved"
+    end
     redirect_to admin_users_path
   end
 end

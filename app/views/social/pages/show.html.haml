@@ -1,11 +1,5 @@
 - if admin?
-  = content_for :head do
-    :javascript
-      var selected_tab=0; // selected tab on admin controls ('wyswietlanie')
-      #{open_specific_tab} // based on "selected_tab" variable
-
-  = content_for :controls do
-    = render :partial => "controls"
+  This is just for Admin
 
 #page
   Sample Content

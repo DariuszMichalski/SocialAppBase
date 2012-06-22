@@ -2,11 +2,11 @@ module Renderers
 
   # ------------------------------------------------------- # renderers #
   def render_blank_and_return
-    render "main/blank"
+    render "social/main/blank"
     return
   end
   def render_not_liked_and_return
-    render "main/like"
+    render "social/main/like"
     return
   end
   def render_blank_and_return_if_not_page

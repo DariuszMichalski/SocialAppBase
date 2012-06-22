@@ -29,6 +29,5 @@ Installation
 Optional
 --------
 
-  $ rails g social_app_base:layouts (recommended)
-  $ rails g social_app_base:views
-  $ rails g social_app_base:tabs
+  $ rails g social_app_base:template:layouts
+  $ rails g social_app_base:template:views
