@@ -8,7 +8,7 @@ module SocialAppBase
 
       def generate_initialization
         copy_file 'config/social-app-base.yml', 'config/social-app-base.yml'
-      end      
+      end
 
       def generate_migration
         destination   = File.expand_path('db/migrate/01_create_template.rb', self.destination_root)
