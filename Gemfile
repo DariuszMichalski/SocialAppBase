@@ -13,10 +13,10 @@ gem 'rails', '3.2.2'
 gem 'devise'
 gem "haml"
 gem 'haml-rails'
-gem 'formtastic'
+gem 'formtastic', '2.1.1'
 gem 'paperclip', "~> 2.4"
 gem "omniauth-facebook"#, '1.2.0'
-gem "fb_graph"
+gem "fb_graph", '2.4.7'
 gem 'ledermann-rails-settings', :require => 'rails-settings'
 
 gem 'execjs'
@@ -30,3 +30,6 @@ end
 
 gem 'jquery-rails'
 
+group :test do
+  gem 'rspec-rails' , '2.9.0'
+end
