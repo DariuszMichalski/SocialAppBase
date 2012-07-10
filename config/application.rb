@@ -48,6 +48,8 @@ module SocialAppBase
 
     Formtastic::FormBuilder.escape_html_entities_in_hints_and_labels = false
 
-    config.action_view.sanitized_allowed_attributes = 'style'
+    config.action_view.sanitized_allowed_attributes = ['style']
+
+    config.active_support.deprecation = :stderr
   end
 end
