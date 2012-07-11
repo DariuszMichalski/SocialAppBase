@@ -24,6 +24,8 @@ Rails.application.routes.draw do
     resources :pages, :except => [:edit]
   end
 
+  root :to => "social/main#index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -3,7 +3,8 @@ class Admin::PageSettings
   include ActiveModel::Conversion
   extend ActiveModel::Naming
 
-  attr_accessor :max_paper_sides, :max_products, :max_product_photos, :time_limit, :end_date
+  # add here other parameters (it allows to use it in the form in admin panel)
+  attr_accessor :time_limit, :end_date
 
   def initialize(attributes = {})
     attributes.each do |name, value|

@@ -43,7 +43,6 @@ class Social::PagesController < Social::BaseController
 
   def update
     respond_to do |format|
-      # format.html { p 'ooooooooooooo'}
       format.js {
         if params[:social_page][:fan_gate]
           @page.fan_gate = params[:social_page][:fan_gate]

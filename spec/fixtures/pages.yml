@@ -1,0 +1,6 @@
+fan_page:
+  page_id: 123456
+  first_name: "John"
+  last_name: "Smith"
+  email: 'john@example.com'
+  terms_of_use: true
