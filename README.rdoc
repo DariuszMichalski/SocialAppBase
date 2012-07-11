@@ -3,7 +3,7 @@ This project rocks and uses MIT-LICENSE.
 Installation
 ------------
 
-If you already have a new Rails application created fallow those steps:
+If you already have a new Rails application created follow those steps:
 
 1. set root path
    root :to => "social/main#index"
