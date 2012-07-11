@@ -1,0 +1,18 @@
+admin:
+  first_name: "Ad"
+  last_name: "Min"
+  email: "ad@min.com"
+  facebook_uid: "007"
+  role: "admin"
+  facebook_access_token: "ABC"
+  created_at: '2012-01-01'
+  updated_at: '2012-01-01'
+
+john:
+  first_name: "John"
+  last_name: "Smith"
+  email: "john@smith.com"
+  facebook_uid: "0123456"
+  facebook_access_token: "ZXC"
+  created_at: '2012-01-01'
+  updated_at: '2012-01-01'
