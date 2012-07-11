@@ -32,4 +32,5 @@ gem 'jquery-rails'
 
 group :test do
   gem 'rspec-rails' , '2.9.0'
+  gem 'timecop', '0.3.5'
 end
