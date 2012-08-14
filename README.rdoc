@@ -10,7 +10,7 @@ If you already have a new Rails application created follow those steps:
 
 2. Add following line to Gemfile and then run <code>$ bundle install</code>
 
-    gem 'social-app-base', :path => "../social-app-base" #:git => "git://github.com/DariuszMichalski/social-app-base.git"
+    gem 'social-app-base', :git => "git@github.com:DariuszMichalski/SocialAppBase.git"
 
 3. Run generator
 
