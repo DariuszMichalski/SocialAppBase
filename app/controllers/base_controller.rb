@@ -70,7 +70,7 @@ class BaseController < ApplicationController
     else
       I18n.locale = I18n.default_locale
     end
-  end      
+  end
 
   def controller?(*controller)
     controller.include?(params[:controller])

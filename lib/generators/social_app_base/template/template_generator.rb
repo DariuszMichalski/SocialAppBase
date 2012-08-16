@@ -25,7 +25,14 @@ module SocialAppBase
       end
 
       def generate_public_assets
-        directory 'app/assets/stylesheets/social-app-base'                    , 'vendor/assets/stylesheets/social-app-base'
+        copy_file 'app/assets/stylesheets/social-app-base/jquery-ui/jquery-ui-1.8.17.css' , 'vendor/assets/stylesheets/social-app-base/jquery-ui/jquery-ui-1.8.17.css'
+        directory 'app/assets/stylesheets/social-app-base/jquery-ui/images'   , 'app/assets/images/jquery-ui'
+        directory 'app/assets/stylesheets/social-app-base/jquery-ui/images'   , 'vendor/assets/stylesheets/social-app-base/jquery-ui/jquery-ui'
+        directory 'app/assets/stylesheets/social-app-base/admin'              , 'vendor/assets/stylesheets/social-app-base/admin'
+        copy_file 'app/assets/stylesheets/social-app-base/admin.css'          , 'vendor/assets/stylesheets/social-app-base/admin.css'
+        copy_file 'app/assets/stylesheets/social-app-base/info.css'           , 'vendor/assets/stylesheets/social-app-base/info.css'
+        copy_file 'app/assets/stylesheets/social-app-base/install.css'        , 'vendor/assets/stylesheets/social-app-base/install.css'
+
         copy_file 'app/assets/javascripts/social-app-base/application.js'     , 'vendor/assets/javascripts/social-app-base/application.js'
         copy_file 'app/assets/javascripts/social-app-base/jquery-1.7.1.js'    , 'vendor/assets/javascripts/social-app-base/jquery-1.7.1.js'
         copy_file 'app/assets/javascripts/social-app-base/jquery-ui-1.8.17.js', 'vendor/assets/javascripts/social-app-base/jquery-ui-1.8.17.js'
