@@ -7,6 +7,7 @@ class BaseController < ApplicationController
   include FacebookSession
   helper_method :fb_session?, :fb_session, :admin? # from FacebookSession module
   helper_method :t, :log, :backend?
+  helper_method :controller?, :action?
 
   layout "application"
 
@@ -70,4 +71,12 @@ class BaseController < ApplicationController
       I18n.locale = I18n.default_locale
     end
   end      
+
+  def controller?(*controller)
+    controller.include?(params[:controller])
+  end
+
+  def action?(*action)
+    action.include?(params[:action])
+  end
 end

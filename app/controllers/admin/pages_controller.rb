@@ -30,8 +30,6 @@ class Admin::PagesController < Admin::BaseController
       @page.settings.all.each do |k,v|
         @page.settings[k] = settings.send(k)
       end
-      # @page.settings.time_limit = settings.time_limit
-      # @page.settings.end_date = settings.end_date
       flash[:info] = "Settings updated"
     else
       flash[:error] = "Could not load page settings"
