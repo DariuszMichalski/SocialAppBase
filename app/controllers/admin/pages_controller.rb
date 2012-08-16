@@ -27,8 +27,11 @@ class Admin::PagesController < Admin::BaseController
   def update_settings
     settings = Admin::PageSettings.new(params[:page_settings]) if params[:page_settings]
     if settings
-      @page.settings.time_limit = settings.time_limit
-      @page.settings.end_date = settings.end_date
+      @page.settings.all.each do |k,v|
+        @page.settings[k] = settings.send(k)
+      end
+      # @page.settings.time_limit = settings.time_limit
+      # @page.settings.end_date = settings.end_date
       flash[:info] = "Settings updated"
     else
       flash[:error] = "Could not load page settings"

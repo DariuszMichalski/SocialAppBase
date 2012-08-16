@@ -10,6 +10,7 @@ class Admin::PageSettings
     attributes.each do |name, value|
       send("#{name}=", value)
     end
+    @attributes = attributes
   end
 
   def persisted?

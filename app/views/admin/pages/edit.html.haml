@@ -35,6 +35,8 @@
     = f.inputs do
       = f.input :time_limit, :as => :select, :collection => ["true","false"]
       = f.input :end_date, :as => :string
+      - @page.settings.all.select { |k,v| !['time_limit','end_date'].include?(k) }.each do |k,v|
+        = f.input k, :as => :string
     = f.buttons do
       = f.commit_button("Save")
 
