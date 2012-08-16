@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Social::PagesController do
+describe PagesController do
   fixtures :users
-  set_fixture_class :users => Social::User
+  set_fixture_class :users => User
 
   let(:fb_page_id) { "148178158318221" } # facebook fan page id
   let(:fb_admin) { true }
@@ -25,8 +25,8 @@ describe Social::PagesController do
   end
 
   describe "standard routes" do
-    it "should map { :controller => 'social/pages', :action => 'show', :id => 'ONE' } to '/social/pages/ONE" do
-      { :get => '/social/pages/ONE' }.should route_to(:controller => 'social/pages', :action => 'show', :id => "ONE")
+    it "should map { :controller => 'pages', :action => 'show', :id => 'ONE' } to '/pages/ONE" do
+      { :get => '/pages/ONE' }.should route_to(:controller => 'pages', :action => 'show', :id => "ONE")
     end
   end
 
@@ -42,7 +42,7 @@ describe Social::PagesController do
 
       context "when fb_session is set and user is a fan page admin" do
         it "should initialize a new Page" do
-          Social::Page.should_receive(:new)
+          Page.should_receive(:new)
           subject
         end
 
@@ -57,9 +57,9 @@ describe Social::PagesController do
 
         # this happens if the request is not being sent within Facebook platform
         it "should render blank template" do
-          Social::Page.should_not_receive(:new)
+          Page.should_not_receive(:new)
           subject
-          response.should render_template("social/main/blank")
+          response.should render_template("main/blank")
         end
       end
     end

@@ -1,0 +1,33 @@
+!!! Strict
+%html
+  %head
+    %title FaceDeals
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    
+    = render :partial => "/layouts/clear_fb_session" if !backend? # do not clear session if admin previews page
+    :javascript
+      // facebook iframe auto-resize
+      window.fbAsyncInit = function() { FB.Canvas.setSize(); } // Do things that will sometimes call sizeChangeCallback()
+      function sizeChangeCallback() { FB.Canvas.setSize(); }
+    = yield :head
+    :javascript
+      load_jquery_ui(); // JQuery UI
+      if (is_browser_incompatibile()) { // check browser compatibility
+        window.location.href = '#{root_url}' + 'not_compatibile';
+      }
+  %body
+    #fb-root
+    = javascript_include_tag "http://connect.facebook.net/en_US/all.js"
+    :javascript
+      FB.init({ appId : "#{SocialAppBase.config.app_id}", status : true, // check login status
+                cookie : true, // enable cookies to allow the server to access the session
+                xfbml : true // parse XFBML
+              });
+      FB.Canvas.setAutoResize(7);
+    = render :partial => "layouts/flash", :locals => {:flash => flash}
+    = yield
+
+
+

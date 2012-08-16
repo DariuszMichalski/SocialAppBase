@@ -3,11 +3,11 @@ class Admin::PagesController < Admin::BaseController
   before_filter :load_page, :only => [:edit, :update, :update_settings, :toggle_block, :show]
 
   def index
-    @pages = @user ? @user.pages : Social::Page.all
+    @pages = @user ? @user.pages : Page.all
   end
 
   def show
-    render :layout => "social/application"
+    render :layout => "application"
   end
 
   def edit
@@ -15,7 +15,7 @@ class Admin::PagesController < Admin::BaseController
   end
 
   def update
-    if @page.update_attributes(params[:social_page])
+    if @page.update_attributes(params[:page])
       flash[:info] = "Page has been updated"
       redirect_to edit_admin_page_path(@page)
     else
@@ -45,6 +45,6 @@ class Admin::PagesController < Admin::BaseController
   private
 
   def load_page
-    @page = @user ? @user.pages.find_by_id(params[:page_id] || params[:id]) : Social::Page.find_by_id(params[:page_id] || params[:id])
+    @page = @user ? @user.pages.find_by_id(params[:page_id] || params[:id]) : Page.find_by_id(params[:page_id] || params[:id])
   end
 end

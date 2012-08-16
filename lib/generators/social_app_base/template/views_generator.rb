@@ -9,16 +9,16 @@ module SocialAppBase
 
         def generate_views
           # pages
-          copy_file   'app/views/social/pages/blocked.html.haml'      , 'app/views/social/pages/blocked.html.haml'
-          copy_file   'app/views/social/pages/new.html.haml'          , 'app/views/social/pages/new.html.haml'
-          copy_file   'app/views/social/pages/time_expired.html.haml' , 'app/views/social/pages/time_expired.html.haml'  
-          copy_file   'app/views/social/pages/show.html.haml'         , 'app/views/social/pages/show.html.haml'
+          copy_file   'app/views/pages/blocked.html.haml'      , 'app/views/pages/blocked.html.haml'
+          copy_file   'app/views/pages/new.html.haml'          , 'app/views/pages/new.html.haml'
+          copy_file   'app/views/pages/time_expired.html.haml' , 'app/views/pages/time_expired.html.haml'  
+          copy_file   'app/views/pages/show.html.haml'         , 'app/views/pages/show.html.haml'
           # main
-          copy_file   'app/views/social/main/blank.html.haml'           , 'app/views/social/main/blank.html.haml'
-          copy_file   'app/views/social/main/index.html.haml'           , 'app/views/social/main/index.html.haml'
-          copy_file   'app/views/social/main/install.html.haml'         , 'app/views/social/main/install.html.haml'  
-          copy_file   'app/views/social/main/like.html.haml'            , 'app/views/social/main/like.html.haml'
-          copy_file   'app/views/social/main/not_compatibile.html.haml' , 'app/views/social/main/shonot_compatibilew.html.haml'
+          copy_file   'app/views/main/blank.html.haml'           , 'app/views/main/blank.html.haml'
+          copy_file   'app/views/main/index.html.haml'           , 'app/views/main/index.html.haml'
+          copy_file   'app/views/main/install.html.haml'         , 'app/views/main/install.html.haml'  
+          copy_file   'app/views/main/like.html.haml'            , 'app/views/main/like.html.haml'
+          copy_file   'app/views/main/not_compatibile.html.haml' , 'app/views/main/shonot_compatibilew.html.haml'
         end
 
       end

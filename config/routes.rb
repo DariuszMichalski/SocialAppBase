@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  devise_for :users, :class_name => "Social::User", :controllers => { :omniauth_callbacks => "social/users/omniauth_callbacks", :sessions => "social/users/sessions"}
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :sessions => "users/sessions", :registrations => "users/registrations"}
   devise_scope :user do
-    get '/users/auth/:provider' => 'social/users/omniauth_callbacks#passthru'
+    get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
   end    
 
   namespace :admin, :path => 'admin' do
@@ -16,15 +16,12 @@ Rails.application.routes.draw do
     end
   end
 
-  namespace :social, :path => "social" do
-    root :to => 'main#index'
-    match "/not_compatibile" => "main#not_compatibile"
-    match "/clear" => "main#clear_session", :as => :clear
-    match "/blank" => "main#blank", :as => :blank
-    resources :pages, :except => [:edit]
-  end
+  match "/not_compatibile" => "main#not_compatibile"
+  match "/clear" => "main#clear_session", :as => :clear
+  match "/blank" => "main#blank", :as => :blank
+  resources :pages, :except => [:edit]
 
-  root :to => "social/main#index"
+  root :to => 'main#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,4 +1,4 @@
-unless defined? ComfortableMexicanSofa::Application
+unless defined? SocialAppBase::Application
   require File.expand_path("social-app-base/engine", File.dirname(__FILE__))
 end
 

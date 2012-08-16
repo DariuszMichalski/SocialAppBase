@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Social::Page do
+describe Page do
 
   let(:now) { '2012-01-01'.to_date }
 
@@ -10,7 +10,7 @@ describe Social::Page do
   end
 
   subject do 
-    Social::Page.create!({:page_id      => 123356,
+    Page.create!({:page_id      => 123356,
                           :first_name   => "John",
                           :last_name    => "Smith",
                           :email        => "john@example.com",
@@ -18,7 +18,7 @@ describe Social::Page do
   end
 
   it "should create a new page" do
-    lambda { subject }.should change { Social::Page.count }.by(1)
+    lambda { subject }.should change { Page.count }.by(1)
   end
 
   it "should have default settings set" do

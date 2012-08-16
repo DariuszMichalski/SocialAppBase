@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Social::MainController do
+describe MainController do
   fixtures :users
-  set_fixture_class :users => Social::User
+  set_fixture_class :users => User
 
   let(:fb_page_id) { "148178158318221" } # facebook fan page id
   let(:fb_admin) { false }
@@ -57,19 +57,19 @@ describe Social::MainController do
       context "if the page is not registered yet" do
         it "should redirect to new page registration view" do
           subject
-          response.should redirect_to(new_social_page_path)
+          response.should redirect_to(new_page_path)
         end
       end
 
       context "if the page is registered" do
         before do 
           # register the page from payload (page_id parameter)
-          Social::Page.create!(:first_name => "J", :last_name => "S", :email => "js@example.com", :page_id => fb_session_payload["page"]["id"], :terms_of_use => true) 
+          Page.create!(:first_name => "J", :last_name => "S", :email => "js@example.com", :page_id => fb_session_payload["page"]["id"], :terms_of_use => true) 
         end
 
         it "should redirect to page view" do
           subject
-          response.should redirect_to(social_page_path(:id => fb_session_payload["page"]["id"]))
+          response.should redirect_to(page_path(:id => fb_session_payload["page"]["id"]))
         end
       end
     end
@@ -85,7 +85,7 @@ describe Social::MainController do
       before do
         session[:fb] = fb_session_payload
         # register the page from payload (page_id parameter)
-        @page = Social::Page.create!(:first_name => "J", :last_name => "S", :email => "js@example.com", :page_id => fb_session_payload["page"]["id"], :terms_of_use => true)
+        @page = Page.create!(:first_name => "J", :last_name => "S", :email => "js@example.com", :page_id => fb_session_payload["page"]["id"], :terms_of_use => true)
       end
 
       subject { get :index }

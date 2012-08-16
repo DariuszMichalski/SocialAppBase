@@ -33,51 +33,6 @@ function scroll_to_top(){
   $(document).ready(function(){ FB.Canvas. scrollTo(0,0); });
 }
 
-function load_tiny_mce(){
-  $(document).ready(function(){
-    $('.tinymce').tinymce({
-            script_url : "/tiny_mce/tiny_mce.js",
-            // General options
-            mode : "textareas",
-            theme : "advanced",
-            skin : "o2k7",
-            skin_variant : "silver",
-            width : '480',
-            // Theme options
-            theme_advanced_buttons1 : "bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,formatselect,|,removeformat,|,forecolor,backcolor",
-            theme_advanced_buttons2 : "",
-            theme_advanced_buttons3 : "",
-            theme_advanced_buttons4 : "",
-            theme_advanced_toolbar_location : "top",
-            theme_advanced_toolbar_align : "left",
-            theme_advanced_statusbar_location : "bottom",
-            theme_advanced_resizing : true,
-
-            // Example content CSS (should be your site CSS)
-            content_css : "/tiny_mce/content.css",
-
-            // Style formats
-            style_formats : [
-                    {title : 'Bold text', inline : 'b'},
-                    {title : 'Example 1', inline : 'span', classes : 'example1'},
-                    {title : 'Example 2', inline : 'span', classes : 'example2'},
-            ],
-
-            formats : {
-                    alignleft : {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'left'},
-                    aligncenter : {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'center'},
-                    alignright : {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'right'},
-                    alignfull : {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'full'},
-                    bold : {inline : 'span', 'classes' : 'bold'},
-                    italic : {inline : 'span', 'classes' : 'italic'},
-                    underline : {inline : 'span', 'classes' : 'underline', exact : true},
-                    strikethrough : {inline : 'del'},
-                    customformat : {inline : 'span', styles : {color : '#00ff00', fontSize : '20px'}, attributes : {title : 'My custom format'}}
-            }
-    });
-  });
-}
-
 function sortable_it(sid, sortable_url, handler){ // JQuery UI settings
   if (handler === undefined) { handler = '' }
   $("#" + sid).sortable({

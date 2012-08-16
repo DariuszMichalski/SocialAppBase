@@ -20,7 +20,10 @@ module SocialAppBase
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
     # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
-
+    config.to_prepare do
+        Devise::SessionsController.layout "amdin/admin"
+        Devise::RegistrationsController.layout "amdin/admin"
+    end
     # Activate observers that should always be running.
     # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
 

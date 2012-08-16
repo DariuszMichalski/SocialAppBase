@@ -3,14 +3,23 @@ module FacebookSession
 
   # decode facebook signed_request
   def set_facebook_session(signed_request)
+    if signed_request.present?
       hashed_signed_request = FacebookAuthentication::parse_signed_request(signed_request, SocialAppBase.config.app_secret)
       session[:fb] = hashed_signed_request
+    else
+      session[:fb] = nil
+    end
   end
   # manage facebook session
   def clear_fb_session
     session[:fb] = nil
     redirect_to root_path
   end
+
+  def clear_fb_session_without_redirect
+    session[:fb] = nil
+  end
+
   def fb_session
     @fb_session ||= FBSession.new(session[:fb])
   end
@@ -53,7 +62,7 @@ class FBSession
     @liked.present? ? @liked : false
   end
   def page_registered?
-    (@page_id.present? and page = Social::Page.find_by_page_id(@page_id)) ? true : false
+    (@page_id.present? and page = Page.find_by_page_id(@page_id)) ? true : false
   end
 
 end

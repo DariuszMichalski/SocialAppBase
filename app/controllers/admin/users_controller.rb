@@ -1,15 +1,15 @@
 class Admin::UsersController < Admin::BaseController
 
   def index
-    @users = Social::User.all
+    @users = User.all
   end
 
   def show
-    @user = Social::User.find_by_id(params[:user_id] || params[:id])
+    @user = User.find_by_id(params[:user_id] || params[:id])
   end
 
   def toggle_block
-    @user = Social::User.find_by_id(params[:user_id] || params[:id])
+    @user = User.find_by_id(params[:user_id] || params[:id])
     if @user.admin?
       flash[:info] = "Admin can not be blocked"
     else

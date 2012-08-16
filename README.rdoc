@@ -6,7 +6,7 @@ Installation
 If you already have a new Rails application created follow those steps:
 
 1. set root path
-   root :to => "social/main#index"
+   root :to => "main#index"
 
 2. Add following line to Gemfile and then run <code>$ bundle install</code>
 
