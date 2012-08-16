@@ -6,6 +6,7 @@ module FacebookSession
     if signed_request.present?
       hashed_signed_request = FacebookAuthentication::parse_signed_request(signed_request, SocialAppBase.config.app_secret)
       session[:fb] = hashed_signed_request
+      create_fb_session(hashed_signed_request, true)
     else
       session[:fb] = nil
     end
@@ -21,13 +22,21 @@ module FacebookSession
   end
 
   def fb_session
-    @fb_session ||= FBSession.new(session[:fb])
+    create_fb_session(session[:fb])
   end
   def fb_session?
     session[:fb] ? true : false
   end
   def admin?
     (fb_session && fb_session.admin?) ? true : false
+  end
+
+  def create_fb_session(hash, force=false)
+    if force
+      @fb_session = FBSession.new(hash)
+    else
+      @fb_session ||= FBSession.new(hash)
+    end
   end
 end
 
