@@ -25,11 +25,11 @@ module SocialAppBase
       end
 
       def generate_public_assets
-        directory 'app/assets/stylesheets/social-app-base'                    , 'app/assets/stylesheets/social-app-base'
-        copy_file 'app/assets/javascripts/social-app-base/application.js'     , 'app/assets/javascripts/social-app-base/application.js'
-        copy_file 'app/assets/javascripts/social-app-base/jquery-1.7.1.js'    , 'app/assets/javascripts/social-app-base/jquery-1.7.1.js'
-        copy_file 'app/assets/javascripts/social-app-base/jquery-ui-1.8.17.js', 'app/assets/javascripts/social-app-base/jquery-ui-1.8.17.js'
-        directory 'app/assets/images/social-app-base'                         , 'app/assets/images/social-app-base'
+        directory 'app/assets/stylesheets/social-app-base'                    , 'vendor/assets/stylesheets/social-app-base'
+        copy_file 'app/assets/javascripts/social-app-base/application.js'     , 'vendor/assets/javascripts/social-app-base/application.js'
+        copy_file 'app/assets/javascripts/social-app-base/jquery-1.7.1.js'    , 'vendor/assets/javascripts/social-app-base/jquery-1.7.1.js'
+        copy_file 'app/assets/javascripts/social-app-base/jquery-ui-1.8.17.js', 'vendor/assets/javascripts/social-app-base/jquery-ui-1.8.17.js'
+        directory 'app/assets/images/social-app-base'                         , 'vendor/assets/images/social-app-base'
       end      
 
       def generate_locales
