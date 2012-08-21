@@ -1,6 +1,6 @@
 class BaseController < ApplicationController
-  before_filter :set_session_for_facebook_page
   before_filter :enable_ie_iframe_sessions
+  before_filter :set_session_for_facebook_page
   before_filter :set_locale
   # before_filter :print_requests
 

@@ -14,7 +14,7 @@ class SocialAppBase::Configuration
     @app_secret           = nil
     @office_mail_address  = nil
     @mailer_sender        = nil
-    @facebook_permissions = 'email, offline_access, manage_pages'
+    @facebook_permissions = ''
   end
   
 end

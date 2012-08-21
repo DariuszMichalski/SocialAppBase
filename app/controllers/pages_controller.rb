@@ -8,7 +8,6 @@ class PagesController < BaseController
   before_filter :admin_rights, :except => ["show"]
 
   def show
-    p "************************ NOT THIS"
     # zabezpieczenie jezeli dostep do strony zostal
     # wylaczony lub wygasl okres dostepu ------------- #
     if @page.blocked?
