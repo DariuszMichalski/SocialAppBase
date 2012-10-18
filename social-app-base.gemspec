@@ -23,7 +23,8 @@ Gem::Specification.new do |s|
   s.add_dependency "formtastic", "~> 2.2.1"
   s.add_dependency 'paperclip', "~> 2.4"
   s.add_dependency "omniauth-facebook", "~> 1.2.0"
-  s.add_dependency "fb_graph", "~> 2.4.7"
+  # s.add_dependency "fb_graph", "~> 2.4.7"
+  s.add_dependency "fbgraph", "~> 1.10.0"
   s.add_dependency 'ledermann-rails-settings'#, :require => 'rails-settings'
   s.add_dependency 'sass-rails',   '~> 3.2.5'
   s.add_dependency 'execjs'

@@ -4,7 +4,8 @@ module FacebookSession
   # decode facebook signed_request
   def set_facebook_session(signed_request)
     if signed_request.present?
-      hashed_signed_request = FacebookAuthentication::parse_signed_request(signed_request, SocialAppBase.config.app_secret)
+      # hashed_signed_request = FacebookAuthentication::parse_signed_request(signed_request, SocialAppBase.config.app_secret)
+      hashed_signed_request = FBGraph::Canvas.parse_signed_request(SocialAppBase.config.app_secret, signed_request)
       session[:fb] = hashed_signed_request
       create_fb_session(hashed_signed_request, true)
     else
