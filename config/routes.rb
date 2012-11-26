@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :sessions => "users/sessions", :registrations => "users/registrations"}
   devise_scope :user do
     get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
+    post '/users/auth_facebook(.format)' => 'users/omniauth_callbacks#facebook'
   end    
 
   namespace :admin, :path => 'admin' do

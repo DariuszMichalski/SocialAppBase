@@ -17,6 +17,7 @@ module SocialAppBase
           copy_file   'app/views/main/blank.html.haml'           , 'app/views/main/blank.html.haml'
           copy_file   'app/views/main/index.html.haml'           , 'app/views/main/index.html.haml'
           copy_file   'app/views/main/install.html.haml'         , 'app/views/main/install.html.haml'  
+          copy_file   'app/views/main/authorize.html.haml'       , 'app/views/main/authorize.html.haml'  
           copy_file   'app/views/main/like.html.haml'            , 'app/views/main/like.html.haml'
           copy_file   'app/views/main/not_compatibile.html.haml' , 'app/views/main/shonot_compatibilew.html.haml'
         end

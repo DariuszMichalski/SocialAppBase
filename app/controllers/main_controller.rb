@@ -2,6 +2,7 @@
 class MainController < BaseController
   #before_filter :authenticate_user!
   before_filter :assign_uid_to_registered_page, :only => :index
+  before_filter :authenticate_user!
   
   layout "info", :only => [:not_compatibile, :blank]
 

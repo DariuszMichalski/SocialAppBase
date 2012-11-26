@@ -1,0 +1,41 @@
+= link_to "Log in", user_omniauth_authorize_path(:facebook)
+
+
+:javascript
+	FB.login(function(l_res){
+		if (l_res.authResponse) {
+			accessToken = l_res.authResponse.accessToken;
+			signedRequest = l_res.authResponse.signedRequest;
+			userID = l_res.authResponse.userID;
+			FB.api('/me', {fields: 'email, first_name, last_name'}, function(m_res) {
+				console.log(m_res);
+				email = m_res.email;
+				first_name = m_res.first_name;
+				last_name = m_res.last_name;
+				
+				$.ajax({
+					url: "/users/auth_facebook.json",
+					dataType: 'json',
+					type: 'POST',
+					data: {
+						signedRequest: signedRequest,
+						user_data: {
+							facebook_access_token: accessToken,
+							facebook_uid: userID,
+							email: email,
+							first_name: first_name,
+							last_name: last_name
+						}
+					},
+					success: function(res){
+						if(res.register_page == true)
+						 	window.top.location.href = 'https://www.facebook.com/add.php?api_key=#{SocialAppBase.config.app_id}&pages=1'
+						else
+							window.top.location.href = '#{request.protocol}www.facebook.com/#{fb_session.page_id}?sk=app_#{SocialAppBase.config.app_id}';
+
+					}
+					})
+			})
+		}
+	}, {scope: '#{SocialAppBase.config.facebook_permissions}'})
+

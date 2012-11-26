@@ -20,18 +20,11 @@ class User < ActiveRecord::Base
     self.facebook_access_token
   end
 
-  def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
-    data = access_token.extra.raw_info
-    if user = User.find_by_email(data.email)
+  def self.find_for_facebook_oauth(user_params)
+    # data = access_token.extra.raw_info
+    if user = User.find_by_email(user_params[:email])
       user
-    else # Create a user with a stub password.
-      user_params = {
-        :email        => data.email,
-        :facebook_uid => access_token.uid,
-        :facebook_access_token => access_token.credentials.token.to_s,
-        :first_name   => data.first_name,
-        :last_name    => data.last_name
-      }
+    else # Create a user with a stub password.      
       user = User.new(user_params)
       user.encrypted_password = Devise.friendly_token[0,20]
       user.save!

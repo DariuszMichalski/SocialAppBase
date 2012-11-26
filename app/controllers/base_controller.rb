@@ -2,6 +2,7 @@ class BaseController < ApplicationController
   before_filter :enable_ie_iframe_sessions
   before_filter :set_session_for_facebook_page
   before_filter :set_locale
+  before_filter :check_if_user_is_logged_in_and_authorized_app
   # before_filter :print_requests
 
   include FacebookSession
@@ -33,6 +34,16 @@ class BaseController < ApplicationController
     set_facebook_session(params[:signed_request]) if params[:signed_request]
   rescue Exception => e
     puts "Exception: " + e.to_s
+  end
+
+  def check_if_user_is_logged_in_and_authorized_app
+    # if no user_id in facbeook_session then app is not authorized
+    unless fb_session.user?
+      # log out current user
+      sign_out current_user if current_user
+      # render something in the background while authorising the app
+      render "authorize"
+    end
   end
 
   def authenticate_user! # overriden devise method, redirects to facebook login
