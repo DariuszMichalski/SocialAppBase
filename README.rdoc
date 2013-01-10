@@ -1,7 +1,7 @@
 This project rocks and uses MIT-LICENSE.
 
 Installation
-------------
+-------------
 
 If you already have a new Rails application created follow those steps:
 
@@ -27,7 +27,7 @@ If you already have a new Rails application created follow those steps:
 7. Comment protect_from_forgery in application_controller.rb (because application will be displayed within an iframe)
 
 Optional
---------
+---------
 
   $ rails g social_app_base:template:layouts
   $ rails g social_app_base:template:views
