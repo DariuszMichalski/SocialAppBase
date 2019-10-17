@@ -14,7 +14,7 @@ gem 'devise'
 gem "haml"
 gem 'haml-rails'
 gem 'formtastic', '2.1.1'
-gem 'paperclip', "~> 2.4"
+gem 'paperclip', "~> 4.3"
 gem "omniauth-facebook"#, '1.2.0'
 gem "fb_graph", '2.4.7'
 gem 'ledermann-rails-settings', :require => 'rails-settings'

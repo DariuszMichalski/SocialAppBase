@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.add_dependency "haml", "~> 3.1.4"
   s.add_dependency "haml-rails", "~> 0.3.4"
   s.add_dependency "formtastic", "~> 2.1.1"
-  s.add_dependency 'paperclip', "~> 2.4"
+  s.add_dependency 'paperclip', ">= 2.4", "< 7.0"
   s.add_dependency "omniauth-facebook", "~> 1.2.0"
   s.add_dependency "fb_graph", "~> 2.4.7"
   s.add_dependency 'ledermann-rails-settings'#, :require => 'rails-settings'
