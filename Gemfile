@@ -8,7 +8,7 @@ gemspec
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'rails', '3.2.2'
+gem 'rails', '3.2.22.5'
 
 gem 'devise'
 gem "haml"
